@@ -1,6 +1,6 @@
 ## Jeanmichel Game
 
-Jeanmichelgame.html is an aim-training style javascript game. You need to follow jeanmichel with your mouse to get the maximum score. Made this while studying front web techs, script needs to be updated
+Jeanmichelgame.html is an aim-training style javascript game. You need to follow jeanmichel with your mouse to reach the maximum score. U don't need to click ! Enjoy sound design. 
 
 jquery & animejs libs used
 
