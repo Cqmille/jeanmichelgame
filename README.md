@@ -6,4 +6,4 @@ jquery & animejs libs used
 
 ## Demo
 
-https://www.vaporwave.fr/jmgame/
+Coming soon
