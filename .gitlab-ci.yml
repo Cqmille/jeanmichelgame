@@ -1,0 +1,18 @@
+stages:
+  - lint
+  - deploy
+
+lint_javascript:
+  stage: lint
+  image: node:latest
+  script:
+    - npm install -g jshint
+    - jshint script.js
+
+deploy_to_server:
+  stage: deploy
+  script:
+    - echo "Deploying to server..."
+    # Deploy script
+  only:
+    - master
