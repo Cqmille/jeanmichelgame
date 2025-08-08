@@ -1,43 +1,40 @@
-
 body {
-	padding-top: 15px;
-	padding-left: 15px;
-	font-size: 37px;
-	color:white;
-	overflow: hidden;
-	background-color: black;
-	background-image:url(img/synthback5.png);
-	background-repeat: no-repeat;
- 	background-size: 100%;
- 	background-attachment: fixed;
- 	background-position: bottom; 
+        padding-top: 15px;
+        padding-left: 15px;
+        font-size: 37px;
+        color:white;
+        overflow: hidden;
+        background-color: black;
+        background-image:url(img/synthback5.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-attachment: fixed;
+        background-position: bottom;
 }
 
 .bouton1 {
-	background-color: #046ca3;
-	padding: 10px 12px;
-	text-align: center;
-	display: inline-block;
-	font-size: 25px;
-	margin: 11px 2px;
-	cursor: pointer;
-
+        background-color: #046ca3;
+        padding: 10px 12px;
+        text-align: center;
+        display: inline-block;
+        font-size: 25px;
+        margin: 11px 2px;
+        cursor: pointer;
 }
 
 .score {
-	position : absolute;
-	margin-left: 10;
-	display: inline-block;
+        position: absolute;
+        margin-left: 10px;
+        display: inline-block;
 }
 
 #top {
-	font-size: 50px;
-	color : #046ca3;
+        font-size: 50px;
+        color: #046ca3;
 }
 
 #jeanmichel {
-	cursor: crosshair;
-	position : absolute;
-	top: 500;
-
+        cursor: crosshair;
+        position: absolute;
+        top: 500px;
 }
