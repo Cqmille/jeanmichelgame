@@ -6,8 +6,8 @@ The game now uses modern JavaScript modules and [anime.js](https://animejs.com/)
 
 ## Features
 
-- Retro start menu with aggressive synthwave vibes
-- 8‑bit inspired UI in pink and black tones
+- 8‑bit start menu with subtle wormhole animation and star field
+- Modern dark interface accented with cyan highlights
 
 ## Demo
 

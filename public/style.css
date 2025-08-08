@@ -1,23 +1,75 @@
 body {
   margin: 0;
   font-family: 'Press Start 2P', cursive;
-  color: #ff2d90;
-  background: radial-gradient(circle at top, #ff2d90 0%, #000 70%);
+  color: #fff;
+  background: #000;
   overflow: hidden;
 }
 
-.hidden {
-  display: none;
-}
-
 .menu-screen {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: radial-gradient(circle at center, #ff2d90 0%, #000 70%);
   text-align: center;
+  overflow: hidden;
+  background: #000;
+}
+
+.menu-screen::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(0, 255, 255, 0.1) 0deg 10deg,
+    rgba(0, 0, 0, 0) 10deg 20deg
+  );
+  animation: spin 20s linear infinite;
+  z-index: -2;
+}
+
+.menu-screen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#fff 1px, transparent 1px),
+    radial-gradient(#fff 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: 0 0, 25px 25px;
+  animation: starfield 60s linear infinite;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes starfield {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50px);
+  }
+}
+
+.hidden {
+  display: none !important;
 }
 
 .title {
@@ -25,23 +77,23 @@ body {
   margin-bottom: 2rem;
 }
 
-.btn-synth {
-  background: #000;
-  color: #ff2d90;
-  border: 4px solid #ff2d90;
+.btn {
+  background: #222;
+  color: #fff;
+  border: 4px solid #0ff;
   padding: 20px 30px;
   cursor: pointer;
   text-transform: uppercase;
-  box-shadow: 4px 4px #ff2d90;
+  box-shadow: 4px 4px #0ff;
 }
 
-.btn-synth.small {
+.btn.small {
   padding: 10px 15px;
   font-size: 0.8rem;
-  box-shadow: 3px 3px #ff2d90;
+  box-shadow: 3px 3px #0ff;
 }
 
-.btn-synth:active {
+.btn:active {
   box-shadow: none;
   transform: translate(4px, 4px);
 }
@@ -64,7 +116,7 @@ body {
 
 #top {
   font-size: 1.5rem;
-  color: #ff2d90;
+  color: #0ff;
 }
 
 .play-area {
