@@ -4,6 +4,11 @@ Jeanmichelgame.html is an aim-training style browser game. Follow Jean-Michel wi
 
 The game now uses modern JavaScript modules and [anime.js](https://animejs.com/) for animations.
 
+## Features
+
+- Retro start menu with aggressive synthwave vibes
+- 8‑bit inspired UI in pink and black tones
+
 ## Demo
 
 Coming soon
