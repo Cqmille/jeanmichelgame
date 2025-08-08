@@ -3,21 +3,28 @@
   <head>
     <meta charset="utf-8" />
     <title>Jeanmichel Game</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="public/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="public/style.css" />
     <script src="public/libs/anime.min.js"></script>
     <script type="module" src="src/main.js"></script>
   </head>
   <body>
-    <div id="startButton" class="bouton1 btn btn-danger">Go</div>
-    <div id="resetButton" class="bouton1 btn btn-danger">Reset</div>
-
-    <div class="score">
-      <p>Score : <span id="top">0</span></p>
+    <div id="menu" class="menu-screen">
+      <h1 class="title">Jeanmichel Game</h1>
+      <button id="startButton" class="btn">Jouer</button>
     </div>
 
-    <div>
-      <img id="jeanmichel" src="public/img/lafleurguy.png" width="100" height="190" draggable="false" />
+    <div id="gameUI" class="game-ui hidden">
+      <div class="top-bar">
+        <div class="score">Score: <span id="top">0</span></div>
+        <button id="resetButton" class="btn small">Reset</button>
+      </div>
+
+      <div class="play-area">
+        <img id="jeanmichel" src="public/img/lafleurguy.png" width="100" height="190" draggable="false" />
+      </div>
     </div>
   </body>
 </html>

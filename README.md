@@ -4,6 +4,11 @@ Jeanmichelgame.html is an aim-training style browser game. Follow Jean-Michel wi
 
 The game now uses modern JavaScript modules and [anime.js](https://animejs.com/) for animations.
 
+## Features
+
+- 8‑bit start menu with subtle wormhole animation and star field
+- Modern dark interface accented with cyan highlights
+
 ## Demo
 
 Coming soon
