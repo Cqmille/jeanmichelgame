@@ -104,16 +104,39 @@ export class JeanMichel {
     }
   }
 
+  getBounds() {
+    // Marges de sécurité pour garder JM visible
+    const padding = 20;
+    const topMargin = 120; // Espace pour le HUD
+
+    return {
+      minX: padding,
+      maxX: window.innerWidth - GAME_CONFIG.JM_WIDTH - padding,
+      minY: topMargin,
+      maxY: window.innerHeight - GAME_CONFIG.JM_HEIGHT - padding
+    };
+  }
+
+  clampPosition(x, y) {
+    const bounds = this.getBounds();
+    return {
+      x: Math.max(bounds.minX, Math.min(bounds.maxX, x)),
+      y: Math.max(bounds.minY, Math.min(bounds.maxY, y))
+    };
+  }
+
   generateKeyframes() {
     const keyframes = [];
     const numKeyframes = 15;
-    const maxX = window.innerWidth - GAME_CONFIG.JM_WIDTH - 50;
-    const maxY = window.innerHeight - GAME_CONFIG.JM_HEIGHT - 100;
+    const bounds = this.getBounds();
 
     for (let i = 0; i < numKeyframes; i++) {
+      const x = bounds.minX + Math.random() * (bounds.maxX - bounds.minX);
+      const y = bounds.minY + Math.random() * (bounds.maxY - bounds.minY);
+
       keyframes.push({
-        translateX: Math.random() * maxX,
-        translateY: Math.random() * maxY
+        translateX: x,
+        translateY: y
       });
     }
 
@@ -158,11 +181,10 @@ export class JeanMichel {
   }
 
   teleport() {
-    const maxX = window.innerWidth - GAME_CONFIG.JM_WIDTH - 50;
-    const maxY = window.innerHeight - GAME_CONFIG.JM_HEIGHT - 100;
+    const bounds = this.getBounds();
 
-    const newX = Math.random() * maxX;
-    const newY = Math.random() * maxY;
+    const newX = bounds.minX + Math.random() * (bounds.maxX - bounds.minX);
+    const newY = bounds.minY + Math.random() * (bounds.maxY - bounds.minY);
 
     // Effet visuel de téléportation
     this.element.style.transition = 'none';
@@ -193,18 +215,18 @@ export class JeanMichel {
     const dodgeDistance = 150 + Math.random() * 100;
     const angle = Math.random() * Math.PI * 2;
 
-    const currentX = this.element.offsetLeft || 0;
-    const currentY = this.element.offsetTop || 0;
+    // Récupérer la position actuelle via getBoundingClientRect
+    const rect = this.element.getBoundingClientRect();
+    const currentX = rect.left;
+    const currentY = rect.top;
 
     let newX = currentX + Math.cos(angle) * dodgeDistance;
     let newY = currentY + Math.sin(angle) * dodgeDistance;
 
-    // Garder dans les limites
-    const maxX = window.innerWidth - GAME_CONFIG.JM_WIDTH - 50;
-    const maxY = window.innerHeight - GAME_CONFIG.JM_HEIGHT - 100;
-
-    newX = Math.max(0, Math.min(maxX, newX));
-    newY = Math.max(100, Math.min(maxY, newY));
+    // Garder dans les limites avec clampPosition
+    const clamped = this.clampPosition(newX, newY);
+    newX = clamped.x;
+    newY = clamped.y;
 
     // Animation rapide d'esquive
     this.stopAnimation();

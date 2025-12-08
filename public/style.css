@@ -42,8 +42,8 @@ body {
 #jeanmichel {
   cursor: crosshair;
   position: absolute;
-  top: 500px;
-  left: 100px;
+  top: 0;
+  left: 0;
   z-index: 10;
   display: none;
   transition: filter 0.2s;
